@@ -18,4 +18,4 @@ ffmpeg 是系统依赖，需单独安装：
 2. 是否需要代理
 3. 确认依赖已安装
 
-首次转录时 Whisper 会自动下载 small 模型（约 500MB）。
+首次转录时 Whisper 会自动下载 tiny 模型（约 150MB）。如使用 `--model small` 则需下载 small 模型（约 500MB）。
