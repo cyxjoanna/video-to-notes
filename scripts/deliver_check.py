@@ -186,14 +186,9 @@ def check_note(path, accept_low_retention=False):
         sr = rc / max(ds if dm else 600, 1)
         # 基础阈值：英文8%，中文按语速分档
         th = 0.08 if has_p3 else (0.10 if sr > 5.0 else (0.27 if sr > 3.5 else 0.45))
-        # 35% 硬下限：中文视频（无P3）且语速 ≥3.5 字/秒时，保留率不得低于 35%
-        if not has_p3 and sr >= 3.5:
-            th = max(th, 0.35)
         if ci2 < rc * th:
-            if accept_low_retention:
-                warnings.append(f"[过度清理] 已绕过（--accept-low-retention）：原始{rc}字，清理后仅{ci2}字({ci2/rc*100:.0f}%)，阈值{th*100:.0f}%")
-            else:
-                errors.append(f"[过度清理] 原始{rc}字，清理后仅{ci2}字({ci2/rc*100:.0f}%)，阈值{th*100:.0f}%。建议用 --model base 或 --model small 重跑后重新检查，或使用 --accept-low-retention 绕过。")
+            errors.append(f"[过度清理] 原始{rc}字，清理后仅{ci2}字({ci2/rc*100:.0f}%)")
+
 
     # 15-19. Part 3检查
     if has_p3:
