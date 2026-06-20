@@ -1,0 +1,10 @@
+# 配置模板 — 复制为 config.yaml 使用
+
+# 笔记输出目录（必填）
+output_path: /path/to/your/obsidian/vault/media
+
+# 代理设置（仅 YouTube 需要）
+proxy: ""
+
+# Whisper 模型: tiny / base / small
+whisper_model: tiny
