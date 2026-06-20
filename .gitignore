@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Media / audio downloads
+*.mp3
+*.wav
+*.m4s
+*.m4a
+output/
+
+# Secrets / config
+.env
+config.yaml
+
+# Runtime artifacts
+*.json

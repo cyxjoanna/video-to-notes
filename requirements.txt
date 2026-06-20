@@ -1,0 +1,4 @@
+faster-whisper
+youtube-transcript-api
+yt-dlp
+bilibili-api-python
