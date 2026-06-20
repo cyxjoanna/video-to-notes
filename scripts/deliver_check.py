@@ -186,6 +186,9 @@ def check_note(path, accept_low_retention=False):
         sr = rc / max(ds if dm else 600, 1)
         # 基础阈值：英文8%，中文按语速分档
         th = 0.08 if has_p3 else (0.10 if sr > 5.0 else (0.27 if sr > 3.5 else 0.45))
+        # 35% 硬下限：中文视频且语速 ≥3.5 时，保留率不得低于 35%
+        if not has_p3 and sr >= 3.5:
+            th = 0.35
         if ci2 < rc * th:
             errors.append(f"[过度清理] 原始{rc}字，清理后仅{ci2}字({ci2/rc*100:.0f}%)")
 

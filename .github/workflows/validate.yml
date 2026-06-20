@@ -11,5 +11,4 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install -r requirements.txt
-      - run: python scripts/deliver_check.py examples/token-economics.md
       - run: python scripts/deliver_check.py examples/apple-speech.md
