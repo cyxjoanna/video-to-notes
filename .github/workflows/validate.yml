@@ -1,0 +1,15 @@
+name: validate
+
+on: [push, pull_request]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - run: python scripts/deliver_check.py examples/token-economics.md
+      - run: python scripts/deliver_check.py examples/apple-speech.md
