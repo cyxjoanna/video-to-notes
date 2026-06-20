@@ -13,3 +13,4 @@ jobs:
       - run: pip install -r requirements.txt
       - run: python scripts/deliver_check.py examples/apple-speech.md
       - run: python scripts/deliver_check.py examples/china-manufacturing.md
+      - run: python scripts/deliver_check.py examples/spacex-gwynne-shotwell.md
